@@ -1,0 +1,99 @@
+// Component section main
+
+.section {
+  @include custom-container;
+
+  min-height: 100vh;
+}
+
+.section__title {
+  padding: 20px 10px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.section--sierra,
+.section--galeria,
+.section--actividades {
+  background-color: $primary-color;
+}
+
+.section--pueblos,
+.section--rutas {
+  background-color: $secondary-color;
+}
+
+.section__list-imagen {
+  padding: 20px 0;
+  list-style: none;
+}
+
+.section__list-rutas {
+  padding-left: 10px;
+  margin: 20px;
+
+  .list-rutas__item { padding: 5px; }
+}
+
+// El siguiente bloque define una lista en formato grid. Inicialmente, se establece una sola columna de 250px de ancho
+
+.section__list-imagen--grid {
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  align-items: center;
+  justify-content: center;  
+  margin-inline: auto;
+  
+  // En el estilo responsive para pantallas con min-width: 800px, la cuadrícula cambia a dos columnas de 300px
+  // y en pantallas con min-width: 1200px, el número de columnas son tres de 400px cada una.
+
+  @media (width >= 800px) {
+    grid-template-columns: repeat(2, 300px);
+    gap: 20px;
+  }
+  
+  @media (width >= 1200px) {
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+  }
+}
+
+.list-imagen__figure { text-align: center; }
+
+.list-imagen__img--actividades {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.list-imagen__figcaption {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  font-weight: $font-bold;
+  text-align: center;
+}
+
+.section__imagen,
+.list-imagen__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  margin-inline: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 3px 2px 12px #555;
+  transition: {
+    property: scale;
+    duration: 1s;
+  }
+
+  &:hover { scale: 1.025; }
+}
+
+// Este estilo responsive para pantallas con min-width: 1200px, establece un max-width: 1100px en los .section__container.
+
+@media (width >= 1200px) {
+  .section__container { max-width: 1100px; }
+}

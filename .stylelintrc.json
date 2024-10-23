@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recess-order"
+  ],
+  "overrides": [
+    {
+      "files": ["dist/**/*.css"],
+      "rules": {
+        "no-duplicate-selectors": null
+      }
+    }
+  ],
+  "plugins": [
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "plugin/selector-bem-pattern": {
+      "componentName": "[a-z]+(?:-[a-z]+)*",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:__[a-z]+(?:-[a-z]+)*)?$",
+        "combined": "^\\.{componentName}__[a-z]+(?:-[a-z]+)*$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+    "selector-class-pattern": "^(fa-[a-z0-9-]+|[a-z]+(?:-[a-z]+)*(?:__[a-z]+(?:-[a-z]+)*)?(?:--[a-z]+(?:-[a-z]+)*)?)$",
+    "font-family-no-missing-generic-family-keyword": null,
+    "unit-allowed-list": ["%", "deg", "px", "rem", "em", "ms", "s", "vh"],
+    "declaration-block-single-line-max-declarations": null,
+    "declaration-property-unit-allowed-list": {
+      "/^font-size/": ["rem", "em"],
+      "/^padding|^gap/": ["px", "em"]
+    },
+    "color-named": "never",
+    "selector-max-id": 0,
+    "number-max-precision": 5
+  },
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.ts"
+  ]
+}

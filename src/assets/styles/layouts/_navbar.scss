@@ -1,0 +1,42 @@
+// Component section navbar
+
+.navbar {
+  position: relative;
+  z-index: 10;
+  color: $text-white;
+  background-color: $header-color;
+  transition: .8s transform ease-in-out;
+  transform: translateY(-400px);
+
+  @media (width >= 1200px) {
+    padding: 20px;
+  }
+
+  .navbar__list {
+    list-style: none;
+
+    // Estilo responsive para pantallas con min-width: 1200px, donde la lista se muestra en flex horizontal. 
+
+    @media (width >= 1200px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .navbar__item {
+      padding: 10px 20px;
+      font-size: 1.4rem;
+
+      .navbar__link {
+        font-weight: $font-bold;
+        color: $text-white;
+        text-decoration: none;
+
+        &:hover { color: $btn-color; }
+      }
+    }
+  }
+}
+
+.show { transform: translateY(60px);
+}
