@@ -3,17 +3,30 @@
 // estableciendose un ancho máximo del 80% del contenedor.
 
 .header__slogan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  padding: 20px;
+  width: 90%;
+  padding: 10px;
   margin-inline: auto;
   font-weight: $font-bold;
-  text-align: center;
   background-color: rgba(255 255 255 / 60%);
   border-radius: 5px;
 
-  .slogan__title { margin-bottom: 20px; }
+  @media (width >= 800px) {
+    width: 70%;
+  }
+
+  .slogan__title {
+    margin-bottom: 20px; 
+    font-size: 2.5rem; 
+    text-align: center;
+
+    @media (width >= 800px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  .slogan__description {
+    @media (width >= 800px) {
+      font-size: 1.5rem;
+    }
+  }
 }

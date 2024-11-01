@@ -1,21 +1,49 @@
 // Component section navbar
 
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
   z-index: 10;
-  color: $text-white;
+  width: 100%;
   background-color: $header-color;
-  transition: .8s transform ease-in-out;
-  transform: translateY(-400px);
 
-  @media (width >= 1200px) {
-    padding: 20px;
+  .navbar__logo {
+    padding: 10px 20px;
+    font-size: 2.5rem;
+    font-weight: $font-bold;
+    text-align: center;
+
+    .logo__link {
+      padding-left: 30px;
+      font-size: 2.25rem;
+      font-weight: $font-bold;
+      color: $text-white;
+      text-align: center;
+      text-decoration: none;
+
+      @media (width >= 1200px) {
+        font-size: 2.75rem;
+      }
+    }
+
+    .logo__btn-menu {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 2.25rem;
+      color: $text-white;
+
+      @media (width >= 1200px) {
+        display: none;
+      }
+    }
   }
 
   .navbar__list {
-    list-style: none;
+    display: none;
+    padding: 10px 0;
 
-    // Estilo responsive para pantallas con min-width: 1200px, donde la lista se muestra en flex horizontal. 
+    // Estilo responsive para pantallas con min-width: 1200px, donde la lista se muestra los elementos con flex horizontal. 
 
     @media (width >= 1200px) {
       display: flex;
@@ -24,19 +52,25 @@
     }
 
     .navbar__item {
-      padding: 10px 20px;
-      font-size: 1.4rem;
+      padding: 10px;
+      margin-left: 40px;
+      color: $text-white;
+      list-style: square;
+
+      @media (width >= 1200px) {
+        list-style: square;
+      }
 
       .navbar__link {
+        font-size: 1.5rem;
         font-weight: $font-bold;
         color: $text-white;
         text-decoration: none;
-
-        &:hover { color: $btn-color; }
       }
+
+      .navbar__link:hover { color: $btn-color; }
     }
   }
 }
 
-.show { transform: translateY(60px);
-}
+.show { display: block !important; }

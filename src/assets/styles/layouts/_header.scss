@@ -1,45 +1,20 @@
-@import 'navbar';
-@import 'slogan';
-
 // Component section header
+
+@import "navbar";
+@import "slogan";
 
 .header {
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin-top: 60px;
-  background-image: url('../images/foto1.jpg');
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("/src/assets/images/miguel-angel-sanz-Fd1dG8P26cs-unsplash-2.jpg");
   background-size: cover;
-  
-  // Los siguiente 2 elementos se usan para quedarse fijo el contenido al hacer scroll.
-  
-  .header__logo {
-    position: fixed;
-    top: 0;
-    z-index: 15;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px;
-    font-size: 2rem;
-    font-weight: $font-bold;
-    color: $text-white;
-    background-color: $header-color;
-  }
 
-  .logo__link {
-    margin-left: 30px;
-    color: $text-white;
-    text-decoration: none;
-  }
-
-  .logo__btn-menu {
-    position: absolute;
-    left: 20px;
-    font-size: 2rem;
+  @media (width >= 1200px) {
+    background-position: center 40%;
     
-    @media (width >= 1200px) {
-      display: none; 
-    }
   }
 }
+
+

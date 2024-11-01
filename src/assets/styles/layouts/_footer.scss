@@ -1,65 +1,87 @@
 // Component section footer
 .footer {
-  @include custom-container;
-
-  padding-top: 20px;
-  padding-bottom: 40px;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   color: $text-white;
   background-color: $footer-color;
 
-  @media (width >= 1200px) {
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-  }
-
   .footer__section { 
-    padding: 20px 10px; 
+    width: 100%; /* Se asegura que ocupe el ancho completo en pantallas pequeñas */ 
+    padding: 10px;
+
+    @media (width >= 800px) {
+      max-width: 80%; 
+      margin-inline: auto;
+    }
 
     @media (width >= 1200px) {
       max-width: 33%; 
     }
   }
+}
+
+@media (width >= 1200px) {
+  .footer {
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+}
 
 // Component form
 .section__form {
-  @include custom-container;
+  width: 100%;
 
-    .form__input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      font-size: 1rem;
-      text-align: center;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .form__btn-submit {
-      width: 100%;
-      padding: 10px 30px;
-      font-size: 1rem;
-      font-weight: $font-bold;
-      background-color: $header-color;
-      border: none;
-      border-radius: 5px;
-
-      &:hover { background-color: $btn-color; }
-      &:active { transform: scale(0.98); }
-    }
+  .form__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
   }
 
-  .footer__social-media {
-    padding: 20px;
-    font-size: 2rem;
-    list-style: none;
+  .form__btn-submit {
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: $font-bold;
+    background-color: $header-color;
+    border: none;
+    border-radius: 5px;
 
-    .social-media__item {
-      display: inline-block;
-      padding: 10px 30px;
-    }
+    &:hover { background-color: $btn-color; }
+    &:active { transform: scale(0.98); }
+  }
+}
 
-    .social-media__link { color: $text-white; }
+.footer__social-media {
+  padding: 20px;
+  margin: 20px;
+  font-size: 2rem;
+  text-align: center;
+  list-style: none;
+
+  .social-media__item {
+    display: inline-block;
+    padding: 10px 30px;
+  }
+
+  .social-media__link { 
+    color: $text-white; 
+  }
+}
+
+.footer__thanks {
+  width: 60%;
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  .thanks__link {
+    color: $text-white;
   }
 }

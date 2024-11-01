@@ -11,11 +11,18 @@
  */
 
 const btn_menu = document.getElementById('btn-menu');
-const navbar = document.getElementById('navbar');
+const navbar = document.getElementById('navbar__list');
 
-btn_menu.addEventListener('click',() => {
+btn_menu.addEventListener('click', () => {
   navbar.classList.toggle('show');
-})
+  
+  if (navbar.classList.contains('show')) {
+    btn_menu.classList.replace('fa-bars', 'fa-xmark');
+  } else {
+    btn_menu.classList.replace('fa-xmark', 'fa-bars');
+  }
+});
+
 
 
 /*
